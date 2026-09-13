@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de monitoreo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="brand">Panel de monitoreo</span>
+    <span class="brand-sub">edítalo con tus propios datos</span>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="imagenes">Imágenes satelitales</button>
+    <button class="tab-btn" data-tab="mapa">Mapa</button>
+    <button class="tab-btn" data-tab="grafico">Gráfico</button>
+  </nav>
+
+  <main>
+
+    <!-- TAB: IMÁGENES -->
+    <section id="imagenes" class="tab-panel active">
+      <p class="panel-hint">Cambia entre fechas o capturas guardadas en <code>images/</code>.</p>
+      <div class="date-buttons" id="date-buttons"></div>
+      <div class="image-frame">
+        <div class="image-label" id="image-label"></div>
+        <img id="main-image" src="" alt="Imagen satelital" />
+      </div>
+    </section>
+
+    <!-- TAB: MAPA -->
+    <section id="mapa" class="tab-panel">
+      <p class="panel-hint">Mapa interactivo — agrega tus propios puntos en <code>data.js</code>.</p>
+      <div id="leaflet-map"></div>
+    </section>
+
+    <!-- TAB: GRÁFICO -->
+    <section id="grafico" class="tab-panel">
+      <p class="panel-hint">Gráfico de ejemplo — reemplaza los valores en <code>data.js</code> por tus datos reales.</p>
+      <canvas id="main-chart"></canvas>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Hecho por Alex</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
